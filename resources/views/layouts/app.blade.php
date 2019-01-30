@@ -2,14 +2,17 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
 		<title>Buba Manjang | </title>
 		<meta name="description" content="A simple grid-powered multibox menu that shows with a reveal animation." />
 		<meta name="keywords" content="slideshow, reveal, effect, animation, web design, template, demo" />
-		<meta name="author" content="Buba Manjang" />
-		<link rel="shortcut icon" href="{{ URL('images/favicon.png') }}">
+        <meta name="author" content="Buba Manjang" />
         
-		<link rel="stylesheet" href="{{ mix('/css/app.css') }}">
+        <script src="{{ asset('js/app.js') }}" defer></script>
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 	</head>
 	<body class="loading">
 		<svg class="hidden">
@@ -33,17 +36,15 @@
 				<p class="info">Work hours: 09:00 &mdash; 19:00 &middot; Sterling Heights &middot; Michigan &middot; USA</p>
 			</div>
 
-			<div>
-                @yield('content')
-            </div>
+			@yield('content')
 
 			<nav class="menu">
 				<div class="menu__item menu__item--1" data-direction="bt">
 					<div class="menu__item-inner">
 						<div class="mainmenu">
-							<a href="{{ URL('/') }}" class="mainmenu__item">Home</a>
-							<a href="{{ URL('/story') }}" class="mainmenu__item">Story</a>
-							<a href="works.html" class="mainmenu__item">Portfolio</a>
+							<a href="index.html" class="mainmenu__item">Home</a>
+							<a href="story.html" class="mainmenu__item">Story</a>
+                            <a href="works.html" class="mainmenu__item">Portfolio</a>
 							<a href="contact.html" class="mainmenu__item">Contact</a>
 						</div>
 						<p class="label label--topleft label--vert-mirror">the important stuff</p>
@@ -61,13 +62,24 @@
 				<div class="menu__item menu__item--3" data-direction="bt">
 					<div class="menu__item-inner">
 						<div class="sidemenu">
-							<a href="{{ URL('/buba-the-entrepreneur') }}" class="sidemenu__item"><span class="sidemenu__item-inner">The Entrepreneur</span></a>
-							<a href="{{ URL('/mobile-application-development') }}" class="sidemenu__item"><span class="sidemenu__item-inner">Mobile App</span></a>
-							<a href="{{ URL('/website-design-development') }}" class="sidemenu__item"><span class="sidemenu__item-inner">Websites</span></a>
+							<a href="buba-the-entrepreneur.html" class="sidemenu__item"><span class="sidemenu__item-inner">The Entrepreneur</span></a>
+							<a href="mobile-app-development.html" class="sidemenu__item"><span class="sidemenu__item-inner">Mobile App</span></a>
+							<a href="website-design-development.html" class="sidemenu__item"><span class="sidemenu__item-inner">Websites</span></a>
 							<a href="#" class="sidemenu__item"><span class="sidemenu__item-inner">Marketing</span></a>
 							<a href="#" class="sidemenu__item"><span class="sidemenu__item-inner">Branding</span></a>
 							<a href="#" class="sidemenu__item"><span class="sidemenu__item-inner">Affiliate</span></a>
-							<a href="#" class="sidemenu__item"><span class="sidemenu__item-inner">...</span></a>
+                            <a href="#" class="sidemenu__item"><span class="sidemenu__item-inner">...</span></a>
+                            @if (Auth::guest())
+                                <a href="{{ route('login') }}" class="sidemenu__item"><span class="sidemenu__item-inner">Login</span></a>
+                                <a href="{{ route('register') }}" class="sidemenu__item"><span class="sidemenu__item-inner">Join the Community</span></a>
+                            @else
+                                <a href="#" class="sidemenu__item"><span class="sidemenu__item-inner">Profile</span></a>
+                                <a href="{{ route('logout') }}" class="sidemenu__item"
+                                    onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                                        <span class="sidemenu__item-inner">Logout</span>
+                                </a>
+                            @endif
 						</div>
 					</div>
 				</div>
@@ -89,6 +101,5 @@
 			</nav>
 		</main>
 
-		<script src="/js/app.js"></script>
 	</body>
 </html>
