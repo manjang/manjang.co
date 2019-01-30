@@ -5,6 +5,24 @@
     width: 100%;
 }
 
+.columns.dashboard {
+    background-color: white;
+    color: #000000;
+    z-index: 9;
+    width: calc(100% - 30px);
+    max-width: 1200px;
+}
+
+.dashboard {
+
+    .sidebar {
+        background-color: #A9A9A9;
+    }
+    .side__menu-list {
+        list-style: none;
+    }
+}
+
 .login label,
 .register label,
 .reset label {
@@ -17,4 +35,8 @@
 
 a.is-muted:hover {
     color: #A9A9A9 !important;
+}
+
+.pagination-list {
+    list-style: none;
 }

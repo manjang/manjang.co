@@ -2,10 +2,6 @@
 // Fonts
 // @import url('https://fonts.googleapis.com/css?family=Nunito');
 
-// Variables
-@import 'variables';
-@import 'overides';
-
 // Font Awesome
 @import '~font-awesome/scss/font-awesome';
 
@@ -17,6 +13,13 @@
 
 // Bulma Vue Modules
 @import '~buefy/src/scss/buefy';
+
+
+// SCSS
+@import 'variables';
+@import 'overides';
+@import "helpers";
+
 
 .navbar-laravel {
   background-color: #fff;
