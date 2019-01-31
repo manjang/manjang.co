@@ -42,10 +42,10 @@
 				<div class="menu__item menu__item--1" data-direction="bt">
 					<div class="menu__item-inner">
 						<div class="mainmenu">
-							<a href="index.html" class="mainmenu__item">Home</a>
-							<a href="story.html" class="mainmenu__item">Story</a>
-                            <a href="works.html" class="mainmenu__item">Portfolio</a>
-							<a href="contact.html" class="mainmenu__item">Contact</a>
+							<a href="{{ URL('/') }}" class="mainmenu__item">Home</a>
+							<a href="{{ URL('/story') }}" class="mainmenu__item">Story</a>
+                            <a href="#" class="mainmenu__item">Portfolio</a>
+							<a href="#" class="mainmenu__item">Contact</a>
 						</div>
 						<p class="label label--topleft label--vert-mirror">the important stuff</p>
 						<p class="label label--bottomright label--vert">buba manjang</p>
@@ -62,9 +62,9 @@
 				<div class="menu__item menu__item--3" data-direction="bt">
 					<div class="menu__item-inner">
 						<div class="sidemenu">
-							<a href="buba-the-entrepreneur.html" class="sidemenu__item"><span class="sidemenu__item-inner">The Entrepreneur</span></a>
-							<a href="mobile-app-development.html" class="sidemenu__item"><span class="sidemenu__item-inner">Mobile App</span></a>
-							<a href="website-design-development.html" class="sidemenu__item"><span class="sidemenu__item-inner">Websites</span></a>
+							<a href="{{ URL('/buba-the-entrepreneur') }}" class="sidemenu__item"><span class="sidemenu__item-inner">The Entrepreneur</span></a>
+							<a href="{{ URL('/mobile-application-development') }}" class="sidemenu__item"><span class="sidemenu__item-inner">Mobile App</span></a>
+							<a href="{{ URL('/website-design-development') }}" class="sidemenu__item"><span class="sidemenu__item-inner">Websites</span></a>
 							<a href="#" class="sidemenu__item"><span class="sidemenu__item-inner">Marketing</span></a>
 							<a href="#" class="sidemenu__item"><span class="sidemenu__item-inner">Branding</span></a>
 							<a href="#" class="sidemenu__item"><span class="sidemenu__item-inner">Affiliate</span></a>
@@ -87,7 +87,7 @@
 				<div class="menu__item menu__item--4" data-direction="rl">
 					<div class="menu__item-inner">
 						<p class="label label--topleft label--line">Need my service?</p>
-						<a href="contact.html" class="menu__item-link">Contact me to <br> discuss your project</a>
+						<a href="#" class="menu__item-link">Contact me to <br> discuss your project</a>
 					</div>
 				</div>
 

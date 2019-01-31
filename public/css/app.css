@@ -17225,7 +17225,7 @@ a.is-muted:hover {
 }
 
 .pagination-list {
-  list-style: none;
+  list-style: none !important;
 }
 
 .m-t-0 {
@@ -17740,11 +17740,6 @@ a.is-muted:hover {
   padding-right: 100px !important;
 }
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-}
-
 article,
 aside,
 details,
@@ -17951,6 +17946,10 @@ table {
   box-sizing: border-box;
 }
 
+html {
+  background-color: #000000;
+}
+
 body {
   --color-text: #fff;
   --color-bg: #252525;
@@ -17970,8 +17969,7 @@ body {
   min-height: 100vh;
   color: #57585c;
   color: var(--color-text);
-  background-color: #fff;
-  background-color: var(--color-bg);
+  background-color: #000000;
   padding: 6rem 0 0 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
